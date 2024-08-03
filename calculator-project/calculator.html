@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="calculation" id="calculation"></div>
+            <button class="calculator-button grey-button" onclick="updateCalculation('(')">(</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation(')')">)</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('%')">%</button>
+            <button class="calculator-button orange-button" onclick="clearCalculation()">AC</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.sin(')">sin</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('7')">7</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('8')">8</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('9')">9</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.cos(')">cos</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('4')">4</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('5')">5</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('6')">6</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.tan(')">tan</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('1')">1</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('2')">2</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('3')">3</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.PI')">π</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('0')">0</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('.')">.</button>
+            <button class="calculator-button orange-button" onclick="calculateResult()">=</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.E')">e</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.pow(')">x^y</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.sqrt(')">√</button>
+            <button class="calculator-button orange-button" onclick="updateCalculation('/')">/</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.asin(')">sin^-1</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.acos(')">cos^-1</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.atan(')">tan^-1</button>
+            <button class="calculator-button orange-button" onclick="updateCalculation('*')">*</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.log(')">ln</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.exp(')">e^x</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.log10(')">log</button>
+            <button class="calculator-button orange-button" onclick="updateCalculation('-')">-</button>
+            
+            <button class="calculator-button grey-button" onclick="updateCalculation('factorial(')">n!</button>
+            <button class="calculator-button grey-button" onclick="toggleDegRad()">Deg/Rad</button>
+            <button class="calculator-button grey-button" onclick="updateCalculation('Math.random()')">Rand</button>
+            <button class="calculator-button orange-button" onclick="updateCalculation('+')">+</button>
+        </div>
+        <div class="history">
+            <h3>History</h3>
+            <button id="reset-history" class="reset-button" onclick="resetHistory()">Reset History</button>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.game-title {
+    font-size: 2.5rem;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+}
+
+.choice-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.game-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    z-index: -1;
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+.game-button:hover::before {
+    opacity: 1;
+}
+
+.game-button:hover {
+    transform: scale(1.1);
+}
+
+.emoji {
+    font-size: 3rem;
+}
+
+.result-display {
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.score-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.score-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FF4500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#instructionsBtn {
+    background-color: #4CAF50;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+#instructionsBtn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: #4CAF50;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@media (max-width: 768px) {
+    .game-button {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .emoji {
+        font-size: 2.5rem;
+    }
+}
